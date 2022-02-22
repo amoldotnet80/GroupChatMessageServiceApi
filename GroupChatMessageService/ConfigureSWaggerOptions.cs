@@ -20,17 +20,6 @@ namespace GroupChatMessageService
 
         public void Configure(SwaggerGenOptions options)
         {
-            //foreach (var desc in provider.ApiVersionDescriptions)
-            //{
-            //    options.SwaggerDoc(
-            //        desc.GroupName, new Microsoft.OpenApi.Models.OpenApiInfo()
-            //        {
-            //            Title = $"GroupChat API {desc.ApiVersion}",
-            //            Version = desc.ApiVersion.ToString()
-            //        });
-
-            //}
-
 
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
@@ -66,7 +55,6 @@ namespace GroupChatMessageService
 
             var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var cmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentFile);
-            options.IncludeXmlComments(cmlCommentsFullPath);
         }
     }
 }
